@@ -1,7 +1,6 @@
 import { Header } from "../components/home/Header";
 import { Hero } from "../components/home/Hero";
 import { FeaturedProducts } from "../components/home/FeaturedProducts";
-import { LoungeVibes } from "../components/home/LoungeVibes";
 import { DeliverySection } from "../components/home/DeliverySection";
 import { Footer } from "../components/home/Footer";
 import { WhyChooseUs } from "../components/home/WhyChooseUs";
