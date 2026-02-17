@@ -24,7 +24,6 @@ export function ShopHeader() {
 
     return (
         <section className="px-4 pt-32 pb-16 border-b border-white/5 bg-neutral-950">
-
             <div className="max-w-6xl mx-auto text-center">
 
                 <h1 className="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
@@ -41,41 +40,49 @@ export function ShopHeader() {
                     Add to cart and send your order directly via WhatsApp.
                 </p>
 
+                {/* 🔥 Minimum Order Notice */}
+                <div className="mt-6 max-w-xl mx-auto">
+                    <div className="bg-green-600/10 border border-green-500/30 text-green-400 rounded-2xl px-6 py-4 text-sm sm:text-base font-medium backdrop-blur-sm">
+                        🚚 Minimum order for delivery: <span className="font-bold text-white">฿1000</span>
+                    </div>
+                </div>
+
                 {/* Category Nav */}
                 <div className="mt-10 flex flex-wrap justify-center gap-3">
-
                     <button
                         onClick={() => handleCategoryChange("all")}
-                        className={`${baseStyle} ${currentCategory === "all" ? activeStyle : inactiveStyle
-                            }`}
+                        className={`${baseStyle} ${currentCategory === "all" ? activeStyle : inactiveStyle}`}
                     >
                         All Products
                     </button>
 
                     <button
                         onClick={() => handleCategoryChange("weed")}
-                        className={`${baseStyle} ${currentCategory === "weed" ? activeStyle : inactiveStyle
-                            }`}
+                        className={`${baseStyle} ${currentCategory === "weed" ? activeStyle : inactiveStyle}`}
                     >
                         Weed
                     </button>
 
                     <button
+                        onClick={() => handleCategoryChange("pre-rolled")}
+                        className={`${baseStyle} ${currentCategory === "pre-rolled" ? activeStyle : inactiveStyle}`}
+                    >
+                        Pre-Rolled
+                    </button>
+
+                    <button
                         onClick={() => handleCategoryChange("accessories")}
-                        className={`${baseStyle} ${currentCategory === "accessories" ? activeStyle : inactiveStyle
-                            }`}
+                        className={`${baseStyle} ${currentCategory === "accessories" ? activeStyle : inactiveStyle}`}
                     >
                         Accessories
                     </button>
 
                     <button
                         onClick={() => handleCategoryChange("exclusive")}
-                        className={`${baseStyle} ${currentCategory === "exclusive" ? activeStyle : inactiveStyle
-                            }`}
+                        className={`${baseStyle} ${currentCategory === "exclusive" ? activeStyle : inactiveStyle}`}
                     >
                         Exclusives
                     </button>
-
                 </div>
 
             </div>

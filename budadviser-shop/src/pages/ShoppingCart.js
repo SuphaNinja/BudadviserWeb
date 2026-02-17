@@ -59,17 +59,22 @@ export function ShoppingCart() {
     };
 
     const handleCheckout = () => {
+        if (total < 1000) {
+            alert("Minimum order is ฿1000.");
+            return;
+        }
+
         if (!form.name || !form.address || !form.paymentMethod) {
             alert("Please fill out all fields!");
             return;
         }
 
-        const phone = "66949419300"; // Your WhatsApp number
+        const phone = "66949419300";
         const url = `https://wa.me/${phone}?text=${createOrderText(cart)}`;
 
         window.open(url, "_blank");
 
-        setLastOrderCart(cart); // store current cart for "Send Again"
+        setLastOrderCart(cart);
         clearCart();
         setCart([]);
         setCheckoutComplete(true);
