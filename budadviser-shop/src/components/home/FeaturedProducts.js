@@ -1,33 +1,7 @@
 import { Link } from "react-router-dom";
-
-import ogKush from "../../assets/image.png";
-
+import { products } from "../../data/Products";
 
 export function FeaturedProducts() {
-    const products = [
-        {
-            name: "OG Kush",
-            price: "฿350/g",
-            strength: "Strong",
-            tag: "🔥 High THC",
-            image: ogKush,
-        },
-        {
-            name: "Green Crack",
-            price: "฿300/g",
-            strength: "Energetic",
-            tag: "⚡ Daytime",
-            image: ogKush,
-        },
-        {
-            name: "Purple Haze",
-            price: "฿320/g",
-            strength: "Smooth",
-            tag: "💨 Relaxed",
-            image: ogKush,
-        },
-    ];
-
     return (
         <section className="bg-neutral-950 px-4 py-16">
 
@@ -43,8 +17,7 @@ export function FeaturedProducts() {
 
             {/* Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-                {products.map((p, i) => (
+                {products.slice(0, 3).map((p, i) => (
                     <div
                         key={i}
                         className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-green-500/20"
