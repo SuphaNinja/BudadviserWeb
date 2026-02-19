@@ -50,7 +50,7 @@ export function Footer() {
                                 href="tel:0841310794"
                                 className="hover:text-green-400 transition"
                             >
-                                084 131 0794
+                                +44 793 805 39 35
                             </a>
                         </div>
 
@@ -59,7 +59,7 @@ export function Footer() {
                         </p>
 
                         <p className="text-gray-400 text-sm mt-1">
-                            🚚 Delivery available throughout all of Pattaya
+                            🚚 Delivery available throughout all of Pattaya 24/7
                         </p>
                     </div>
 
@@ -88,13 +88,6 @@ export function Footer() {
                                 <FaFacebookF size={20} />
                             </a>
                         </div>
-
-                        <a
-                            href="tel:0841310794"
-                            className="inline-block bg-green-600 hover:bg-green-500 text-white font-bold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105"
-                        >
-                            Call Now
-                        </a>
                     </div>
                 </div>
 

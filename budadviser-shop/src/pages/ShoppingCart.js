@@ -49,26 +49,42 @@ export function ShoppingCart() {
             return;
         }
 
+        // 📅 Format date & time nicely
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString("en-GB", {
+            weekday: "short",
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+        });
+
+        const formattedTime = now.toLocaleTimeString("en-GB", {
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+
+        const timestamp = `${formattedDate} • ${formattedTime}`;
+
         // Build WhatsApp message
-        const phone = "66949419300"; // your WhatsApp number
+        const phone = "+447938053935";
         let message = `🛒 *New Order* 🛒\n\n`;
+        message += `🕒 ${timestamp}\n\n`;
         message += `👤 Name: ${form.name}\n`;
         message += `🏠 Address: ${form.address}\n`;
         message += `💰 Payment Method: ${form.paymentMethod}\n\n`;
         message += `📦 Items:\n`;
+
         cart.forEach(item => {
             message += `• ${item.name} × ${item.quantity} ${item.unitLabel} (฿${item.unitPrice * item.quantity})\n`;
         });
+
         message += `\n💳 Total: ฿${total}`;
+
         const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
-        // Open WhatsApp
         window.open(url, "_blank");
 
-        // Save last order for "Send Again" button
         setLastOrderCart(cart);
-
-        // Clear cart
         clearCart();
         setCart([]);
         setCheckoutComplete(true);
